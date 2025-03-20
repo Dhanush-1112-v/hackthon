@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            text-align: center;
+            padding: 20px;
+        }
+        .rsvp-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            margin: auto;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="rsvp-container">
+        <h2>Confirm Your RSVP</h2>
+        <form id="rsvpForm" action="https://formspree.io/f/mqapeljn" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <button type="submit">Confirm RSVP</button>
+        </form>
+        <p id="rsvpMessage" style="color: green;"></p>
+    </div>
+
+    <script>
+        document.getElementById("rsvpForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            
+            fetch(this.action, {
+                method: "POST",
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById("rsvpMessage").textContent = "RSVP Confirmed! 🎉 Check your email.";
+                    setTimeout(() => {
+                        window.location.href = "booking.html"; // Redirect to homepage
+                    }, 3000);
+                } else {
+                    alert("Error! Please try again.");
+                }
+            }).catch(error => alert("Error! Please try again."));
+        });
+    </script>
+
+</body>
+</html>

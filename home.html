@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventPulse - Local Events</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>EventPulse - Find Events Near You</h1>
+        <p id="locationStatus">Detecting your location...</p>
+    </header>
+
+    <div class="container">
+        <div id="map"></div>
+        <div class="event-list">
+            <h2>Upcoming Events Near You</h2>
+            <ul id="eventContainer"></ul>
+        </div>
+    </div>
+    <!-- <button type="button" onclick="window.location.href='rsvp.html'">Join Event</button> -->
+
+
+    <div id="rsvpModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>RSVP for Event</h2>
+            <p id="eventTitle"></p>
+            <button id="confirmRSVP">Confirm RSVP</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <div id="popupNotification" class="popup">
+        <p>🎉 Exciting Holi is awaiting! <a href="booking.html">Book your tickets now!</a></p>
+    </div>
+    <div id="popupNotification" class="popup">
+        <p>🎉 Exciting Diwali mela is awaiting! <a href="booking.html">Book your tickets now!</a></p>
+    </div>
+    <div id="popupNotification" class="popup">
+        <p>🎉 Exciting Ganesh utsav is awaiting! <a href="booking.html">Book your tickets now!</a></p>
+    </div>
+    <div id="popupNotification" class="popup">
+        <p>🎉 JAI BHAVANI,Exciting Dussera is awaiting! <a href="booking.html">Book your tickets now!</a></p>
+    </div>
+    <div id="popupNotification" class="popup">
+        <p>🎉 Are you Ready for bonalu jatara!! <a href="booking.html">Book your tickets now!</a></p>
+    </div>
+    
+
+</body>
+</html>
+
